@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 15px;
+            color: #000;
+            background-color: #fff;
+        }
+
+        h1 {
+            color: #0000CD; /* Medium Blue */
+            font-size: 24px;
+            margin-bottom: 20px;
+            margin-top: 5px;
+            font-weight: bold;
+        }
+
+        /* The Main Table Frame */
+        .form-table {
+            width: 100%;
+            max-width: 850px;
+            border-collapse: collapse;
+            border: 2px solid #000; /* The main visible frame */
+        }
+
+        /* Table Cells (Grid Lines) */
+        .form-table td {
+            border: 1px solid #ccc; /* Lines between every row and column */
+            padding: 12px 15px;
+            vertical-align: middle;
+        }
+
+        /* Left Column (Labels) */
+        .label-col {
+            width: 35%;
+            background-color: #f4f4f4; /* Light gray shading for the label column */
+            font-size: 15px;
+        }
+
+        /* Right Column (Inputs) */
+        .input-col {
+            width: 65%;
+            background-color: #fff;
+        }
+
+        /* Inputs styling */
+        input[type="text"], select {
+            padding: 6px 8px;
+            border: 1px solid #767676;
+            font-size: 14px;
+            color: #333;
+            box-sizing: border-box;
+            width: 100%;
+            max-width: 350px;
+        }
+
+        /* Radio Buttons */
+        .radio-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .radio-option {
+            display: flex;
+            align-items: center;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        input[type="radio"] {
+            margin-right: 10px;
+            transform: scale(1.1);
+        }
+
+        /* Textarea */
+        textarea {
+            border: 1px solid #767676;
+            resize: none;
+            padding: 6px;
+            width: 100%;
+            max-width: 350px;
+            height: 60px;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+
+        /* Warning Text */
+        .warning-text {
+            color: #CC0000; /* Dark Red */
+            font-size: 14px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        /* Submit Button */
+        .submit-btn {
+            background-color: transparent;
+            color: #008000; /* Dark Green */
+            border: 1px solid #767676;
+            padding: 8px 15px;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            font-family: inherit;
+            box-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .submit-btn:active {
+            box-shadow: inset 2px 2px 4px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>PATIENT REGISTRATION FORM</h1>
+
+    <form>
+        <table class="form-table">
+            <!-- Patient Name -->
+            <tr>
+                <td class="label-col"><label>patient name:</label></td>
+                <td class="input-col">
+                    <input type="text" placeholder="e.g Mercylinah Mung'au">
+                </td>
+            </tr>
+
+            <!-- National ID -->
+            <tr>
+                <td class="label-col"><label>National ID:</label></td>
+                <td class="input-col">
+                    <input type="text" placeholder="e.g.326...">
+                </td>
+            </tr>
+
+            <!-- Date of Birth -->
+            <tr>
+                <td class="label-col"><label>date of birth:</label></td>
+                <td class="input-col">
+                    <select>
+                        <option value=""></option>
+                        <option value="2000">2000</option>
+                        <option value="2001">2001</option>
+                        <option value="2002">2002</option>
+                    </select>
+                </td>
+            </tr>
+
+            <!-- Phone Number -->
+            <tr>
+                <td class="label-col"><label>Patient's phone number:</label></td>
+                <td class="input-col">
+                    <input type="text" placeholder="e.g. 0720...">
+                </td>
+            </tr>
+
+            <!-- Address -->
+            <tr>
+                <td class="label-col"><label>Address</label></td>
+                <td class="input-col">
+                    <input type="text" placeholder="e.g. P.O BOX 1-101">
+                </td>
+            </tr>
+
+            <!-- Gender -->
+            <tr>
+                <td class="label-col"><label>please select your gender:</label></td>
+                <td class="input-col">
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="gender" value="male" checked> male
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="gender" value="female"> female
+                        </label>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Marital Status -->
+            <tr>
+                <td class="label-col"><label>Marital status:</label></td>
+                <td class="input-col">
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="marital" value="Married" checked> Married
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="marital" value="Single"> Single
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="marital" value="Divorced"> Divorced
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="marital" value="Deceased"> Deceased
+                        </label>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Next of Kin -->
+            <tr>
+                <td class="label-col"><label>Next of kin:</label></td>
+                <td class="input-col">
+                    <input type="text" placeholder="e.g. Mary Wekesa" style="margin-bottom: 5px;"><br>
+                    <input type="text" placeholder="e.g. Mother" style="margin-bottom: 5px;"><br>
+                    <input type="text" placeholder="e.g. P.O BOX 1-101">
+                </td>
+            </tr>
+
+            <!-- Patient ID -->
+            <tr>
+                <td class="label-col"><label>Patient ID:</label></td>
+                <td class="input-col">
+                    <input type="text" placeholder="e.g. PT-233/026">
+                </td>
+            </tr>
+
+            <!-- Health Status -->
+            <tr>
+                <td class="label-col"><label>Health status(what cured):</label></td>
+                <td class="input-col">
+                    <select>
+                        <option value=""></option>
+                        <option value="Malaria">Malaria</option>
+                        <option value="Typhoid">Typhoid</option>
+                        <option value="Flu">Flu</option>
+                    </select>
+                </td>
+            </tr>
+
+            <!-- Others (Textarea) -->
+            <tr>
+                <td class="label-col"></td> 
+                <td class="input-col">
+                    <textarea placeholder="Others"></textarea>
+                </td>
+            </tr>
+
+            <!-- Weight -->
+            <tr>
+                <td class="label-col"><label>Weight(kgs):</label></td>
+                <td class="input-col">
+                    <input type="text" placeholder="e.g. 45">
+                </td>
+            </tr>
+
+            <!-- Action Row (Warning and Button) -->
+            <tr>
+                <td colspan="2" style="text-align: center; background-color: #fafafa;">
+                    <div class="warning-text">
+                        Please check the details before submitting
+                    </div>
+                    <button type="submit" class="submit-btn">Submit and Register</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+</body>
+</html>
